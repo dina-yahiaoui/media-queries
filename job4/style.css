@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style pour le header et le menu de navigation */
+header {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cache la case à cocher */
+#menu-toggle {
+    display: none;
+}
+
+/* Style des liens de navigation */
+#nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Style du bouton hamburger */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    /* Masque les liens et affiche le bouton hamburger */
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    #menu-toggle:checked + .hamburger + #nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        color: #fff;
+    }
+}
